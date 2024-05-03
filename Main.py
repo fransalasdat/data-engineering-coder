@@ -1,6 +1,6 @@
-import http.client  # Importar el módulo http.client para hacer solicitudes HTTP
 import json  # Importar el módulo json para manejar datos JSON
 import psycopg2  # Importar la biblioteca psycopg2 para interactuar con PostgreSQL (Redshift)
+import requests  # Importar la biblioteca requests para hacer solicitudes HTTP 
 
 # Datos de conexión a Redshift
 dbname = 'data-engineer-database'
@@ -41,13 +41,9 @@ try:
         cur.execute(f"DELETE FROM current_standings WHERE League_id = '{league_id}'")
         
         # Hacer la solicitud HTTP a la API para obtener los datos de la tabla de posiciones
-        conn_api = http.client.HTTPSConnection("v3.football.api-sports.io")
-        conn_api.request("GET", f"/standings?league={league_id}&season=2023", headers=headers)
-        res = conn_api.getresponse()
-        data = res.read()
-        decoded_data = data.decode("utf-8")
-        result_dict = json.loads(decoded_data)
-        conn_api.close()
+        url = f"https://v3.football.api-sports.io/standings?league={league_id}&season=2023"
+        response = requests.get(url, headers=headers)
+        result_dict = response.json()
         
         # Verificar si la respuesta contiene datos válidos
         if "response" in result_dict and result_dict["response"]:

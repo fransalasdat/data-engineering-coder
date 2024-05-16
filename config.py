@@ -1,2 +1,2 @@
 PWD_REDSHIFT = 'eHgW2401vJ'
-API_KEY = 'tu_clave_de_API_aqui'
+API_KEY = 'bbf04fb6aac9b84535835019b45f55a2'

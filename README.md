@@ -16,3 +16,9 @@ Este proyecto es parte del Curso de Data Engineer de Coderhouse, el mismo extrae
 
 ```sh
 docker build -t coder_project_salas .
+```
+### Correr Contenedor
+
+```sh
+docker run --env-file .env coder_project_salas
+```

@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    environment:
+      - PWD_REDSHIFT=${PWD_REDSHIFT}
+      - API_KEY=${API_KEY}
+    env_file:
+      - .env

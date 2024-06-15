@@ -1,0 +1,2 @@
+Crear Imagen posicionandose en el directorio y con el comando: docker build -t coder_project_salas_v2 .
+Correr Contenedor posicionandose en el directorio con el comando: docker run --env-file .env coder_project_salas_v2

@@ -1,7 +1,6 @@
 # Coder Project Salas
 
-Este proyecto extrae datos de una API de fútbol y los inserta en una base de datos Redshift usando Docker.
-
+Este proyecto es parte del Curso de Data Engineer de Coderhouse, el mismo extrae datos de una API de fútbol y los inserta en una base de datos Redshift usando Docker.
 ## Archivos del Proyecto
 
 - `.env`: Contiene las variables de entorno (API keys, contraseñas).
